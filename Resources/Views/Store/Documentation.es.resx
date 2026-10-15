@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="title" xml:space="preserve">
+    <value>Documentación de Juegos</value>
+  </data>
+  <data name="alpine_title" xml:space="preserve">
+    <value>1. Reporte Técnico de Desarrollo: Esquí Alpino (Foundever Games)</value>
+  </data>
+  <data name="alpine_s1_title" xml:space="preserve">
+    <value>Arquitectura del Motor Unity y Pipeline de Física</value>
+  </data>
+  <data name="alpine_s1_p1" xml:space="preserve">
+    <value>El desarrollo de Esquí Alpino dentro del ecosistema Unity se basa en una arquitectura de scripts C# optimizada, adaptada para movimiento continuo y detección de colisiones de alta frecuencia.</value>
+  </data>
+  <data name="alpine_s1_li1_title" xml:space="preserve">
+    <value>Rigidbodies y Cinemática:</value>
+  </data>
+  <data name="alpine_s1_li1_text" xml:space="preserve">
+    <value>El personaje del esquiador aprovecha un controlador híbrido cinemático-dinámico. Los vectores de gravedad e impulso se modulan dinámicamente mediante scripts de física personalizados para simular resistencia realista de la nieve e inclinación de la pendiente.</value>
+  </data>
+  <data name="alpine_s1_li2_title" xml:space="preserve">
+    <value>Terreno y Generación Procedural:</value>
+  </data>
+  <data name="alpine_s1_li2_text" xml:space="preserve">
+    <value>El Motor de Terreno de Unity se utiliza junto con mesh colliders optimizados para despliegue WebGL. Los chunks de nivel se instancian dinámicamente para mantener una tasa de fotogramas estable, reduciendo la sobrecarga de recolección de basura de memoria durante sesiones de juego extendidas.</value>
+  </data>
+  <data name="alpine_s1_li3_title" xml:space="preserve">
+    <value>Gestión de Entrada:</value>
+  </data>
+  <data name="alpine_s1_li3_text" xml:space="preserve">
+    <value>Mapeo directo a eventos de teclado y táctiles mediante el paquete Input System de Unity, asegurando traducción sin latencia de los comandos de dirección del usuario.</value>
+  </data>
+  <data name="alpine_s2_title" xml:space="preserve">
+    <value>Arte Visual y Pipeline de Assets 3D</value>
+  </data>
+  <data name="alpine_s2_p1" xml:space="preserve">
+    <value>La identidad visual de Esquí Alpino equilibra la optimización del rendimiento con un atractivo estético estilizado, adaptado para entrega basada en navegador.</value>
+  </data>
+  <data name="alpine_s2_li1_title" xml:space="preserve">
+    <value>Low-Poly y Optimización de Assets:</value>
+  </data>
+  <data name="alpine_s2_li1_text" xml:space="preserve">
+    <value>Los entornos 3D, árboles y obstáculos se construyen usando técnicas de modelado de polígonos bajos en Blender, seguido de baking de normal maps para preservar el detalle de superficie sin inflación de polígonos.</value>
+  </data>
+  <data name="alpine_s2_li2_title" xml:space="preserve">
+    <value>Shaders y Efectos de Entorno:</value>
+  </data>
+  <data name="alpine_s2_li2_text" xml:space="preserve">
+    <value>Se implementan shaders Unlit y Toon personalizados para gestionar la iluminación y oclusión ambiental eficientemente, asegurando alta claridad visual incluso en hardware estándar.</value>
+  </data>
+  <data name="alpine_s2_li3_title" xml:space="preserve">
+    <value>Iluminación y Post-Procesamiento:</value>
+  </data>
+  <data name="alpine_s2_li3_text" xml:space="preserve">
+    <value>Ruta de renderizado forward combinada con lightmaps horneados livianos para simular luz alpina nítida sin sobrecargar los recursos GPU durante las pausas activas de los empleados.</value>
+  </data>
+  <data name="alpine_s3_title" xml:space="preserve">
+    <value>Interfaz de Usuario (UI) y Experiencia de Usuario (UX)</value>
+  </data>
+  <data name="alpine_s3_p1" xml:space="preserve">
+    <value>La interfaz está diseñada para comprensión rápida y navegación sin fricción, adhiriéndose a los estándares de accesibilidad corporativos.</value>
+  </data>
+  <data name="alpine_s3_li1_title" xml:space="preserve">
+    <value>Integración del HUD:</value>
+  </data>
+  <data name="alpine_s3_li1_text" xml:space="preserve">
+    <value>Métricas en tiempo real como velocidad actual, temporizador y marcadores de distancia se gestionan a través del componente Canvas Scaler de Unity, asegurando escalado responsivo en configuraciones de oficina multi-monitor y resoluciones de navegador variables.</value>
+  </data>
+  <data name="alpine_s3_li2_title" xml:space="preserve">
+    <value>Arquitectura de Menú:</value>
+  </data>
+  <data name="alpine_s3_li2_text" xml:space="preserve">
+    <value>Diseñado en Figma y portado a Unity usando prefabs de UI limpios, con estados de inicio inmediato, funcionalidad de pausa para interrupciones laborales inesperadas y resúmenes instantáneos de retroalimentación de telemetría.</value>
+  </data>
+  <data name="gold_title" xml:space="preserve">
+    <value>2. Reporte Técnico de Desarrollo: Lanzamiento de Oro (Foundever Games)</value>
+  </data>
+  <data name="gold_s1_title" xml:space="preserve">
+    <value>Arquitectura del Motor Unity y Pipeline de Física</value>
+  </data>
+  <data name="gold_s1_p1" xml:space="preserve">
+    <value>Lanzamiento de Oro se enfoca en mecánicas precisas de proyectil, requiriendo modelado matemático robusto dentro del motor de física de Unity.</value>
+  </data>
+  <data name="gold_s1_li1_title" xml:space="preserve">
+    <value>Predicción de Trayectoria y Balística:</value>
+  </data>
+  <data name="gold_s1_li1_text" xml:space="preserve">
+    <value>Algoritmos C# personalizados calculan arcos parabólicos en tiempo real, considerando velocidad inicial de lanzamiento, vectores de ángulo y resistencia ambiental simulada.</value>
+  </data>
+  <data name="gold_s1_li2_title" xml:space="preserve">
+    <value>Detección de Colisiones y Triggers de Puntuación:</value>
+  </data>
+  <data name="gold_s1_li2_text" xml:space="preserve">
+    <value>Los mesh colliders y volúmenes trigger están optimizados usando Matrices de Colisión por Capas para aislar zonas objetivo, asegurando detección de impacto instantánea y precisa.</value>
+  </data>
+  <data name="gold_s1_li3_title" xml:space="preserve">
+    <value>Gestión de Estados:</value>
+  </data>
+  <data name="gold_s1_li3_text" xml:space="preserve">
+    <value>Un script centralizado de Game Manager supervisa la progresión de rondas, persistencia de puntuación y transiciones de estado victoria/derrota con latencia mínima de ejecución.</value>
+  </data>
+  <data name="gold_s2_title" xml:space="preserve">
+    <value>Arte Visual y Pipeline de Assets 3D</value>
+  </data>
+  <data name="gold_s2_p1" xml:space="preserve">
+    <value>La dirección estética de Lanzamiento de Oro se centra en retroalimentación visual de alto contraste e interacción satisfactoria de materiales.</value>
+  </data>
+  <data name="gold_s2_li1_title" xml:space="preserve">
+    <value>Texturizado y Economía de Materiales:</value>
+  </data>
+  <data name="gold_s2_li1_text" xml:space="preserve">
+    <value>Los assets se modelan con topología limpia y se mapean usando atlas de texturas comprimidos para asegurar tiempos de carga rápidos en las redes globales de la empresa.</value>
+  </data>
+  <data name="gold_s2_li2_title" xml:space="preserve">
+    <value>Efectos Visuales (VFX):</value>
+  </data>
+  <data name="gold_s2_li2_text" xml:space="preserve">
+    <value>Sistemas de partículas construidos con el módulo Particle System de Unity generan retroalimentación visual impactante al anotar (ej., chispas de brillo metálico, ráfagas de partículas doradas) optimizados para alto rendimiento.</value>
+  </data>
+  <data name="gold_s2_li3_title" xml:space="preserve">
+    <value>Animación y Rigging:</value>
+  </data>
+  <data name="gold_s2_li3_text" xml:space="preserve">
+    <value>Jerarquías esqueléticas y animaciones de transformación simples son impulsadas por controladores de animación livianos, asegurando transiciones de movimiento fluidas para las mecánicas de lanzamiento.</value>
+  </data>
+  <data name="gold_s3_title" xml:space="preserve">
+    <value>Interfaz de Usuario (UI) y Experiencia de Usuario (UX)</value>
+  </data>
+  <data name="gold_s3_p1" xml:space="preserve">
+    <value>El framework de UI para Lanzamiento de Oro prioriza el engagement competitivo y la legibilidad inmediata.</value>
+  </data>
+  <data name="gold_s3_li1_title" xml:space="preserve">
+    <value>Elementos Interactivos del HUD:</value>
+  </data>
+  <data name="gold_s3_li1_text" xml:space="preserve">
+    <value>Contadores de puntuación, indicadores de viento/modificadores y rastreadores de intentos están posicionados según principios de jerarquía visual probados en Figma, reduciendo la carga cognitiva para los jugadores durante intervalos breves de pausa.</value>
+  </data>
+  <data name="gold_s3_li2_title" xml:space="preserve">
+    <value>Ciclos de Retroalimentación:</value>
+  </data>
+  <data name="gold_s3_li2_text" xml:space="preserve">
+    <value>Señales visuales claras, sacudidas de pantalla estilo háptico (mediante interpolaciones de posición de cámara) y cambios dinámicos de color proporcionan refuerzo inmediato de las acciones del usuario, contribuyendo a una experiencia de usuario atractiva y relajante.</value>
+  </data>
+</root>

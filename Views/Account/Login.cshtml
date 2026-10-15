@@ -1,0 +1,101 @@
+﻿@model LoginModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = "Login - ";
+    Layout = "_AuthLayout";
+    var domains = ViewBag.Domains as List<GameLauncher.Models.DomainModel> ?? new List<GameLauncher.Models.DomainModel>();
+}
+
+<div class="father-container">
+    <img class="logoimage-body" src="~/images/Isotipo Azul Png.png" />
+
+    <div class="main-container">
+
+        <div class="right-login-container">
+            <img class="image-port" src="~/images/Portada.jpeg" />
+        </div>
+
+        <div class="left-login-container">
+
+            <form asp-controller="Account" asp-action="Login" method="post">
+
+                <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+
+                <div class="logo-container">
+                    <img class="logo-image" src="~/images/Isotipo Png.png" />
+                </div>
+
+                <div class="header-container">
+                    <h2>@Localizer["title"]</h2>
+                </div>
+
+                <div class="domain-container input-container">
+                    <label asp-for="DomainId">@Localizer["domain"]</label>
+                    <select asp-for="DomainId" required>
+                        <option value="">@Localizer["domain_placeholder"]</option>
+                        @foreach (var domain in domains)
+                        {
+                            <option value="@domain.DomainId">@domain.Domain</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="username-container input-container">
+                    <label asp-for="UserName">@Localizer["username"]</label>
+                    <input asp-for="UserName" type="text" placeholder="@Localizer["username_placeholder"]" required />
+                </div>
+
+                <div class="password-container input-container">
+                    <label asp-for="Password">@Localizer["password"]</label>
+                    <input asp-for="Password" type="password" placeholder="@Localizer["password_placeholder"]" required />
+                </div>
+
+                <button class="homeBtn" type="submit">@Localizer["btn"]</button>
+            </form>
+
+            <div class="separator">
+                <span>@Localizer["or"]</span>
+            </div>
+
+            <p class="register-link">
+                @Localizer["no_account"]
+                <a asp-controller="Account" asp-action="SignUp">@Localizer["register_link"]</a>
+            </p>
+
+            <!-- Status Messages -->
+            <div id="operationStatus">
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="status-message success-message">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                        <span>@TempData["SuccessMessage"]</span>
+                    </div>
+                }
+
+                @if (!ViewData.ModelState.IsValid)
+                {
+                    @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <div class="status-message error-message">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="15" y1="9" x2="9" y2="15"></line>
+                                <line x1="9" y1="9" x2="15" y2="15"></line>
+                            </svg>
+                            <span>@error.ErrorMessage</span>
+                        </div>
+                    }
+                }
+            </div>
+
+            <a asp-controller="Store" asp-action="Index" class="btn-return">
+                @Localizer["return_btn"] <i class="fa-solid fa-chevron-right chevron"></i>
+            </a>
+
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,138 @@
+﻿@model GameLauncher.Models.PlayerCommentsViewModel
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["title"].Value;
+}
+
+<div class="distribute-layout">
+    <partial name="_DistributeSidebar" />
+
+    <div class="distribute-content">
+        <div class="comments-header">
+            <h1 class="distribute-title">@Localizer["title"]</h1>
+            @if (Model.IsLoggedIn)
+            {
+                <button class="btn-new-comment" onclick="openNewCommentModal()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    @Localizer["new_comment"]
+                </button>
+            }
+        </div>
+
+        <div class="comments-list" id="commentsList">
+            @if (Model.Comments.Any())
+            {
+                @foreach (var comment in Model.Comments)
+                {
+                    <partial name="_CommentItem" model="comment" />
+                }
+            }
+            else
+            {
+                <div class="comments-empty">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <p>@Localizer["empty"]</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Modal: New Comment -->
+<div class="comment-modal-overlay" id="newCommentModal">
+    <div class="comment-modal">
+        <div class="comment-modal-header">
+            <h2>@Localizer["new_comment"]</h2>
+            <button class="modal-close" onclick="closeNewCommentModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="comment-modal-body">
+            <input type="text" id="newCommentTitle" class="comment-input" placeholder="@Localizer["title_placeholder"]" maxlength="200" />
+            <textarea id="newCommentContent" class="comment-textarea" placeholder="@Localizer["content_placeholder"]" rows="4"></textarea>
+        </div>
+        <div class="comment-modal-footer">
+            <button class="btn-cancel" onclick="closeNewCommentModal()">@Localizer["cancel"]</button>
+            <button class="btn-submit" onclick="submitNewComment()">@Localizer["post_comment"]</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Reply -->
+<div class="comment-modal-overlay" id="replyModal">
+    <div class="comment-modal">
+        <div class="comment-modal-header">
+            <h2>@Localizer["reply"]</h2>
+            <button class="modal-close" onclick="closeReplyModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="comment-modal-body">
+            <div class="reply-context" id="replyContext"></div>
+            <textarea id="replyContent" class="comment-textarea" placeholder="@Localizer["reply_placeholder"]" rows="3"></textarea>
+        </div>
+        <div class="comment-modal-footer">
+            <input type="hidden" id="replyParentId" />
+            <button class="btn-cancel" onclick="closeReplyModal()">@Localizer["cancel"]</button>
+            <button class="btn-submit" onclick="submitReply()">@Localizer["post_reply"]</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: Comment Detail -->
+<div class="comment-modal-overlay" id="detailModal">
+    <div class="comment-modal comment-modal-detail">
+        <div class="comment-modal-header">
+            <h2 id="detailTitle">@Localizer["title"]</h2>
+            <button class="modal-close" onclick="closeDetailModal()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="comment-modal-body" id="detailBody">
+        </div>
+    </div>
+</div>
+
+<!-- Variables de traducción para JavaScript -->
+<script>
+    var i18n = {
+        reply: "@Localizer["reply"]",
+        delete_btn: "@Localizer["delete"]",
+        replies: "@Localizer["replies"]",
+        by: "@Localizer["by"]",
+        comment: "@Localizer["title"]",
+        confirm_delete: "@Localizer["confirm_delete"]",
+        alert_write_comment: "@Localizer["alert_write_comment"]",
+        alert_write_reply: "@Localizer["alert_write_reply"]",
+        alert_error_comment: "@Localizer["alert_error_comment"]",
+        alert_error_reply: "@Localizer["alert_error_reply"]",
+        alert_error_delete: "@Localizer["alert_error_delete"]",
+        alert_connection: "@Localizer["alert_connection"]",
+        time_just_now: "@Localizer["time_just_now"]",
+        time_min: "@Localizer["time_min"]",
+        time_hrs: "@Localizer["time_hrs"]",
+        time_days: "@Localizer["time_days"]",
+        time_months: "@Localizer["time_months"]",
+        time_years: "@Localizer["time_years"]",
+        time_ago: "@Localizer["time_ago"]"
+    };
+</script>
+
+@section Scripts {
+    <script src="~/js/player-comments.js?v=2"></script>
+}

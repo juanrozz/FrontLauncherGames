@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Game Launcher</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="body-sesion">
+
+    <!-- BOTÓN DE IDIOMA FLOTANTE -->
+    <div class="floating-lang">
+        <button class="floating-lang-btn" onclick="toggleFloatingLang()">
+            <i class="fa-solid fa-globe"></i>
+        </button>
+        <div class="floating-lang-panel" id="floatingLangPanel">
+            <a class="floating-lang-option" href="@Url.Action("SetLanguage", "Culture", new { culture = "es" })">
+                <span class="floating-lang-flag">🇪🇸</span>
+                <span>@Localizer["lang_spanish"]</span>
+            </a>
+            <a class="floating-lang-option" href="@Url.Action("SetLanguage", "Culture", new { culture = "en" })">
+                <span class="floating-lang-flag">🇺🇸</span>
+                <span>@Localizer["lang_english"]</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- CONTENIDO -->
+    @RenderBody()
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-logo-container">
+            <img src="~/images/FooterFoundever.png" alt="" class="footer-logo" />
+            <div class="footer-line"></div>
+            <img src="~/images/R&D.jpg" alt="Software R&D" class="footer-logo rd-logo" />
+        </div>
+    </footer>
+
+    <script>
+            function toggleFloatingLang() {
+                var panel = document.getElementById('floatingLangPanel');
+                if (panel.classList.contains('show')) {
+                    panel.classList.remove('show');
+                } else {
+                    panel.classList.add('show');
+                }
+            }
+
+            document.addEventListener('click', function (e) {
+                var container = document.querySelector('.floating-lang');
+                if (container && !container.contains(e.target)) {
+                    document.getElementById('floatingLangPanel').classList.remove('show');
+                }
+            });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
