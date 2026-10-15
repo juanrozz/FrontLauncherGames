@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["title"].Value;
+}
+
+<div class="distribute-layout">
+    <partial name="_DistributeSidebar" />
+
+    <div class="distribute-content">
+        <h1 class="distribute-title">@Localizer["title"]</h1>
+
+        <div class="distribute-article">
+            <!-- ===== ALPINE SKIING ===== -->
+            <h2 class="article-title">@Localizer["alpine_title"]</h2>
+
+            <h3 class="section-number">@Localizer["alpine_s1_title"]</h3>
+            <p>@Localizer["alpine_s1_p1"]</p>
+            <ul class="content-list">
+
+                <li><strong>@Localizer["alpine_s1_li1_title"]</strong> @Localizer["alpine_s1_li1_text"]</li>
+                <li><strong>@Localizer["alpine_s1_li2_title"]</strong> @Localizer["alpine_s1_li2_text"]</li>
+                <li><strong>@Localizer["alpine_s1_li3_title"]</strong> @Localizer["alpine_s1_li3_text"]</li>
+            </ul>
+
+            <h3 class="section-number">@Localizer["alpine_s2_title"]</h3>
+            <p>@Localizer["alpine_s2_p1"]</p>
+            <ul class="content-list">
+                <li><strong>@Localizer["alpine_s2_li1_title"]</strong> @Localizer["alpine_s2_li1_text"]</li>
+                <li><strong>@Localizer["alpine_s2_li2_title"]</strong> @Localizer["alpine_s2_li2_text"]</li>
+                <li><strong>@Localizer["alpine_s2_li3_title"]</strong> @Localizer["alpine_s2_li3_text"]</li>
+            </ul>
+
+            <h3 class="section-number">@Localizer["alpine_s3_title"]</h3>
+            <p>@Localizer["alpine_s3_p1"]</p>
+            <ul class="content-list">
+                <li><strong>@Localizer["alpine_s3_li1_title"]</strong> @Localizer["alpine_s3_li1_text"]</li>
+                <li><strong>@Localizer["alpine_s3_li2_title"]</strong> @Localizer["alpine_s3_li2_text"]</li>
+            </ul>
+
+            <!-- ===== GOLD THROW ===== -->
+            <h2 class="article-title">@Localizer["gold_title"]</h2>
+
+            <h3 class="section-number">@Localizer["gold_s1_title"]</h3>
+            <p>@Localizer["gold_s1_p1"]</p>
+            <ul class="content-list">
+                <li><strong>@Localizer["gold_s1_li1_title"]</strong> @Localizer["gold_s1_li1_text"]</li>
+                <li><strong>@Localizer["gold_s1_li2_title"]</strong> @Localizer["gold_s1_li2_text"]</li>
+                <li><strong>@Localizer["gold_s1_li3_title"]</strong> @Localizer["gold_s1_li3_text"]</li>
+            </ul>
+
+            <h3 class="section-number">@Localizer["gold_s2_title"]</h3>
+            <p>@Localizer["gold_s2_p1"]</p>
+            <ul class="content-list">
+                <li><strong>@Localizer["gold_s2_li1_title"]</strong> @Localizer["gold_s2_li1_text"]</li>
+                <li><strong>@Localizer["gold_s2_li2_title"]</strong> @Localizer["gold_s2_li2_text"]</li>
+                <li><strong>@Localizer["gold_s2_li3_title"]</strong> @Localizer["gold_s2_li3_text"]</li>
+            </ul>
+
+            <h3 class="section-number">@Localizer["gold_s3_title"]</h3>
+            <p>@Localizer["gold_s3_p1"]</p>
+            <ul class="content-list">
+                <li><strong>@Localizer["gold_s3_li1_title"]</strong> @Localizer["gold_s3_li1_text"]</li>
+                <li><strong>@Localizer["gold_s3_li2_title"]</strong> @Localizer["gold_s3_li2_text"]</li>
+            </ul>
+        </div>
+    </div>
+</div>

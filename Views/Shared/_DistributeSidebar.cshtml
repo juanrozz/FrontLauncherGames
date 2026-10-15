@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    var currentPath = Context.Request.Path.ToString().ToLower();
+}
+
+<aside class="distribute-sidebar">
+    <div class="sidebar-header">
+        <p class="sidebar-desc">@Localizer["description"]</p>
+        <div class="sidebar-divider"></div>
+    </div>
+
+    <nav class="sidebar-nav">
+        <a id="forum-icon" asp-controller="Store" asp-action="Index" class="sidebar-link">
+            <i id="text-forum-icon">
+                <img class="logo-small" src="/images/Isotipo Png.png" />
+            </i> @Localizer["store"]
+        </a>
+        <a asp-controller="Store" asp-action="Forums"
+           class="sidebar-link @(currentPath.Contains("forums") ? "active" : "")">
+            <i class="fa-solid fa-desktop"></i> @Localizer["forums"]
+        </a>
+        <a asp-controller="Store" asp-action="Documentation"
+           class="sidebar-link @(currentPath.Contains("documentation") ? "active" : "")">
+            <i class="fa-solid fa-file-lines"></i> @Localizer["docs"]
+        </a>
+        <a asp-controller="Store" asp-action="PlayerComments"
+           class="sidebar-link @(currentPath.Contains("playercomments") ? "active" : "")">
+            <i class="fa-regular fa-comment"></i> @Localizer["comments"]
+        </a>
+    </nav>
+</aside>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="title" xml:space="preserve">
+    <value>Foros de Desarrolladores</value>
+  </data>
+  <data name="article_title" xml:space="preserve">
+    <value>Fundamento Técnico y Arquitectura de Comunicaciones: Foundever Games</value>
+  </data>
+  <data name="section1_title" xml:space="preserve">
+    <value>1. Resumen Ejecutivo y Propósito Estratégico</value>
+  </data>
+  <data name="section1_p1" xml:space="preserve">
+    <value>Foundever Games se establece como una iniciativa de ingeniería de software y bienestar corporativo diseñada para mitigar la fatiga cognitiva y optimizar los tiempos de pausas activas en toda la infraestructura global de la organización. La plataforma opera como un repositorio centralizado de videojuegos basados en web y ejecutables livianos, diseñados para integrarse de manera fluida en los flujos de trabajo operativos diarios del personal. Su objetivo principal es proporcionar incentivos para el descanso controlado durante las pausas regulatorias y períodos de pausa activa, fomentando la cohesión cultural a través de dinámicas recreativas compartidas.</value>
+  </data>
+  <data name="section2_title" xml:space="preserve">
+    <value>2. Alcance de Infraestructura y Cobertura Global</value>
+  </data>
+  <data name="section2_p1" xml:space="preserve">
+    <value>La arquitectura de la plataforma está escalada para soportar acceso concurrente a escala multinacional, interconectando de forma transparente todos los sitios operativos de Foundever a nivel mundial.</value>
+  </data>
+  <data name="section2_li1_title" xml:space="preserve">
+    <value>Despliegue Multi-Región:</value>
+  </data>
+  <data name="section2_li1_text" xml:space="preserve">
+    <value>Reducción de latencia mediante servidores distribuidos en nodos estratégicos para garantizar tiempos de respuesta óptimos (baja latencia para ejecución web y WebGL).</value>
+  </data>
+  <data name="section2_li2_title" xml:space="preserve">
+    <value>Acceso Unificado:</value>
+  </data>
+  <data name="section2_li2_text" xml:space="preserve">
+    <value>Integración de la comunidad corporativa internacional bajo un ecosistema de autenticación centralizado, permitiendo la interacción multifuncional entre empleados de diversas geografías y zonas horarias sin fricción técnica.</value>
+  </data>
+  <data name="section3_title" xml:space="preserve">
+    <value>3. Ecosistema de Interacción y Funcionalidades Comunitarias</value>
+  </data>
+  <data name="section3_p1" xml:space="preserve">
+    <value>La propuesta de valor de Foundever Games trasciende la mera distribución de software recreativo, incorporando módulos nativos para la trazabilidad de la experiencia del usuario e intercambio social:</value>
+  </data>
+  <data name="section3_li1_title" xml:space="preserve">
+    <value>Telemetría y Feed de Progreso:</value>
+  </data>
+  <data name="section3_li1_text" xml:space="preserve">
+    <value>Un sistema de registro de hitos, puntuaciones y logros desbloqueados dentro de los títulos, mostrados en un panel de actividad en tiempo real.</value>
+  </data>
+  <data name="section3_li2_title" xml:space="preserve">
+    <value>Canales de Retroalimentación y Dinámicas de Equipo:</value>
+  </data>
+  <data name="section3_li2_text" xml:space="preserve">
+    <value>Foros de discusión por título y espacios estructurados para documentar experiencias sobre torneos internos, desafíos interdepartamentales y eventos de integración donde se han implementado los juegos.</value>
+  </data>
+  <data name="section3_li3_title" xml:space="preserve">
+    <value>Trazabilidad de Métricas de Uso:</value>
+  </data>
+  <data name="section3_li3_text" xml:space="preserve">
+    <value>Recopilación de datos de interacción anonimizados para evaluar el impacto de las pausas activas en los niveles de productividad y el bienestar general de los empleados en las diversas subsidiarias de la empresa.</value>
+  </data>
+</root>

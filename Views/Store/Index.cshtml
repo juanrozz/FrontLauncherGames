@@ -1,0 +1,91 @@
+﻿@model List<GameLauncher.Models.GamesJdr>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["menu_title"].Value;
+    var token = Context.Session.GetString("Token");
+    var isLoggedIn = !string.IsNullOrEmpty(token);
+    var culture = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+}
+
+<div class="store-search">
+    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+    <input type="text" id="gameSearchInput" class="search-input" placeholder="@Localizer["search"]" autocomplete="off" />
+</div>
+
+
+<div class="image-index">
+    <img class="image-port" src="~/images/PortadaSiginUp.jpeg" />
+    <div class="image-text">
+        <span class="image-subtitle">@Localizer["store_name"]</span>
+        <h1 class="image-title">@Localizer["new_releases"]</h1>
+        <p class="image-desc">@Localizer["date_range"]</p>
+    </div>
+    <div class="image-text-button">
+        <h3>@Localizer["star_score"]</h3>
+        <span class="image-subtitle">@Localizer["favorite_olympics"]</span>
+        <a asp-controller="Account" asp-action="Login" class="btn-signin image">@Localizer["sign_in_btn"]</a>
+    </div>
+</div>
+
+<div class="game-showcase">
+    <div class="game-preview">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var game = Model[i];
+            var gameName = culture == "es" && !string.IsNullOrEmpty(game.GameNameEs)
+                           ? game.GameNameEs : game.GameName;
+            var gameDesc = culture == "es" && !string.IsNullOrEmpty(game.DescriptionEs)
+                           ? game.DescriptionEs : game.Description;
+
+            <div class="game-slide @(i == 0 ? "active" : "")" data-game="@game.GameId">
+                <img src="@game.ImageUrl" alt="@gameName" />
+                <div class="game-slide-overlay"></div>
+                <div class="game-slide-info">
+                    <div class="game-slide-logo">
+                        <img src="@game.IconUrl" alt="@gameName" class="game-logo-icon" />
+                        <h2>@gameName</h2>
+                    </div>
+                    <p class="game-slide-desc">@gameDesc</p>
+                    @if (isLoggedIn)
+                    {
+                        <a href="" class="btn-play">@Localizer["play"]</a>
+                    }
+                    else
+                    {
+                        <a asp-controller="Account" asp-action="Login"
+                           asp-route-returnUrl="@Context.Request.Path"
+                           class="btn-play">@Localizer["play"]</a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="game-list">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            var game = Model[i];
+            var gameName = culture == "es" && !string.IsNullOrEmpty(game.GameNameEs)
+                           ? game.GameNameEs : game.GameName;
+
+            <div class="game-item @(i == 0 ? "active" : "")" data-game="@game.GameId">
+                <img src="@game.ImageUrl" alt="@gameName" />
+                <span>@gameName</span>
+            </div>
+        }
+
+        @for (int i = Model.Count; i < 5; i++)
+        {
+            <div class="game-item disabled">
+                <img src="~/images/Isotipo Azul Png.png" />
+                <span>@Localizer["soon"]</span>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/game-showcase.js"></script>
+    <script src="~/js/game-search.js"></script>
+}

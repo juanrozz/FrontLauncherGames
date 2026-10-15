@@ -1,0 +1,45 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@{
+    ViewData["Title"] = Localizer["title"].Value;
+}
+
+<div class="distribute-layout">
+    <partial name="_DistributeSidebar" />
+
+    <div class="distribute-content">
+        <h1 class="distribute-title">@Localizer["title"]</h1>
+
+        <div class="distribute-article">
+            <h2 class="article-title">@Localizer["article_title"]</h2>
+
+            <h3 class="section-number">@Localizer["section1_title"]</h3>
+            <p>@Localizer["section1_p1"]</p>
+
+            <h3 class="section-number">@Localizer["section2_title"]</h3>
+            <p>@Localizer["section2_p1"]</p>
+            <ul class="content-list">
+                <li>
+                    <strong>@Localizer["section2_li1_title"]</strong> @Localizer["section2_li1_text"]
+                </li>
+                <li>
+                    <strong>@Localizer["section2_li2_title"]</strong> @Localizer["section2_li2_text"]
+                </li>
+            </ul>
+
+            <h3 class="section-number">@Localizer["section3_title"]</h3>
+            <p>@Localizer["section3_p1"]</p>
+            <ul class="content-list">
+                <li>
+                    <strong>@Localizer["section3_li1_title"]</strong> @Localizer["section3_li1_text"]
+                </li>
+                <li>
+                    <strong>@Localizer["section3_li2_title"]</strong> @Localizer["section3_li2_text"]
+                </li>
+                <li>
+                    <strong>@Localizer["section3_li3_title"]</strong> @Localizer["section3_li3_text"]
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
